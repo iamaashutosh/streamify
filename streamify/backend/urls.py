@@ -7,6 +7,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 urlpatterns = [
     path('movies/',views.ListCreateMovies.as_view(),name="list_create_movies"),
     path('movies/<int:pk>',views.UpdateDetailMovie.as_view(),name="update_detail_movie"),
+    path('search/',views.SearchMovie.as_view(),name="search_movie"),
     path('register/',views.CreateUserView.as_view(),name="register"),
     path('token',TokenObtainPairView.as_view(),name="token"),
     path('token/refresh',TokenRefreshView.as_view(),name="refresh")
