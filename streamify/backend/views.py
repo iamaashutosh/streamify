@@ -101,11 +101,17 @@ def logout(request):
         Response({'success':False})
 
 
-class ListMovies(generics.ListAPIView):
+class ListMovies(generics.ListCreateAPIView):
     queryset=Movies.objects.all()
     serializer_class = MovieSerializer
-    authentication_classes=[CookiesJWTAuthentication]
-    permission_classes=[IsAuthenticated]
+    # authentication_classes=[CookiesJWTAuthentication]
+    # permission_classes=[IsAuthenticated]
+
+    def post(self,request,*args, **kwargs):
+        if request.user.is_supreuser:
+            self.post(request.data)
+        else:
+            return Response({"You are not authenticated."})
 
 
 
