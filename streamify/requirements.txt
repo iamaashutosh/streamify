@@ -10,3 +10,4 @@ psycopg2-binary
 python-dotenv
 django-filter
 pillow
+dj_database_url

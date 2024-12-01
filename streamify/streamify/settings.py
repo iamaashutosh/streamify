@@ -196,4 +196,5 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://*.on-acorn.io"
     "https://*.on-acorn.io"
+    "https://railway.app/"
 ]
