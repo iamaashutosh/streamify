@@ -8,5 +8,5 @@ pytz
 sqlparse
 psycopg2-binary
 python-dotenv
-django-filters
+django-filter
 pillow
