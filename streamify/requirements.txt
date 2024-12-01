@@ -11,3 +11,4 @@ python-dotenv
 django-filter
 pillow
 dj_database_url
+gunicorn
