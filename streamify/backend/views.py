@@ -107,11 +107,11 @@ class ListMovies(generics.ListCreateAPIView):
     # authentication_classes=[CookiesJWTAuthentication]
     # permission_classes=[IsAuthenticated]
 
-    def post(self,request,*args, **kwargs):
-        if request.user.is_supreuser:
-            self.post(request.data)
-        else:
-            return Response({"You are not authenticated."})
+    # def post(self,request,*args, **kwargs):
+    #     if request.user.is_supreuser:
+    #         self.post(request.data)
+    #     else:
+    #         return Response({"You are not authenticated."})
 
 
 
