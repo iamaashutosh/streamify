@@ -153,9 +153,32 @@ class SearchMovie(generics.ListAPIView):
             qs=qs.filter(title__icontains=title)
         return qs
     
+class UserProfileView(generics.RetrieveUpdateAPIView):
+    authentication_classes=[CookiesJWTAuthentication]
+    permission_classes=[IsAuthenticated]
+    serializer_class=UserProfileSerializer
+    
+    def get_queryset(self):
+        user = UserProfile.objects.get(user=self.request.user)
+        return user
+    
+    def get_object(self):
+        queryset = self.get_queryset()
+        return queryset
+    
+    def perform_update(self,serializer):
+        if serializer.is_valid(raise_exception=True):
+            userprofile = self.request.user.userprofile
+            self.request.user.userprofile.image.delete()
+            self.request.user.first_name = userprofile.first_name
+            self.request.user.last_name= userprofile.last_name
+            self.request.user.email=userprofile.email
+            self.request.user.save()
+        serializer.save()
 
 
-
+    
+        
 @api_view(['GET'])
 @authentication_classes([CookiesJWTAuthentication])
 @permission_classes([IsAuthenticated])
