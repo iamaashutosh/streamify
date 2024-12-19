@@ -11,6 +11,9 @@ from rest_framework.permissions import AllowAny,IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
+from rest_framework import status
+from rest_framework.exceptions import PermissionDenied
+
 
 from .authentication import CookiesJWTAuthentication
 
@@ -104,16 +107,21 @@ def logout(request):
 class ListMovies(generics.ListCreateAPIView):
     queryset=Movies.objects.all()
     serializer_class = MovieSerializer
-    # authentication_classes=[CookiesJWTAuthentication]
-    # permission_classes=[IsAuthenticated]
+    authentication_classes=[CookiesJWTAuthentication]
+    permission_classes=[IsAuthenticated]
 
-    # def post(self,request,*args, **kwargs):
-    #     if request.user.is_supreuser:
-    #         self.post(request.data)
-    #     else:
-    #         return Response({"You are not authenticated."})
-
-
+    # def post(self,request,*args,**kwargs):
+    #     if not request.user.is_superuser:
+    #         return Response({"Not authenticated"})
+    #     serializer = self.get_serializer(data= request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()
+    #         return Response(serializer.data,status=status.HTTP_201_CREATED)
+    #     return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    def perform_create(self, serializer):
+        if not self.request.user.is_superuser:
+            raise PermissionDenied("You do not have permission to create a movie.")
+        serializer.save()
 
 class UpdateDetailMovie(generics.RetrieveUpdateAPIView):
     queryset=Movies.objects.all()
@@ -121,6 +129,12 @@ class UpdateDetailMovie(generics.RetrieveUpdateAPIView):
     authentication_classes=[CookiesJWTAuthentication]
     permission_classes=[IsAuthenticated]
     lookup_field='pk'
+
+    def perform_update(self, serializer):
+        if not self.request.user.is_superuser:
+            raise PermissionDenied("You do not have permission to update this movie.")
+        serializer.save()
+
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -138,6 +152,8 @@ class SearchMovie(generics.ListAPIView):
         if title is not None:
             qs=qs.filter(title__icontains=title)
         return qs
+    
+
 
 
 @api_view(['GET'])
