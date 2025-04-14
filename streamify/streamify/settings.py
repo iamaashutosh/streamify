@@ -195,24 +195,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
-FIREBASE_CONFIG = {
-
-  'apiKey': "AIzaSyDe9ZygUI1ppAzznD6NH5k4QzzG0ZvKo5s",
-
-  'authDomain': "streamify-4abce.firebaseapp.com",
-
-  'projectId': "streamify-4abce",
-
-  'storageBucket': "streamify-4abce.firebasestorage.app",
-
-  'messagingSenderId': "638188197601",
-
-  'appId': "1:638188197601:web:a76441fa12a6ea786789a0",
-
-  'measurementId': "G-VHQHGLK1JY",
-  "serviceAccount": BASE_DIR/'streamify-4abce-firebase-adminsdk-1zv3v-3b3b3b3b3b.json',
-
-}
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS=True
