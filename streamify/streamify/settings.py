@@ -223,13 +223,13 @@ CSRF_TRUSTED_ORIGINS = [
     "https://railway.app/"
 ]
 
-STRIPE_PUBLISHABLE_KEY = "pk_test_51RBV91IodBvEuETZxVL4WDRzCEfswk2lgK2imrrWGvDheqyLPv7aWxIyVzcIwNe0fuDgWppLEdM7qKqHQ28VsbGu00WxBJYN5P"
-STRIPE_TEST_SECRET_KEY = "sk_test_51RBV91IodBvEuETZHcuZulpGtGexjiIzlXeejK9zy8arjHSSrFWwnFuwG6LWnuVu800DurzZwcfPtdEr0k397Cj200JwcQ7IYI"
-STRIPE_PRICE_ID="price_1RBXJOIodBvEuETZfI4umpeh"
-STRIPE_WEBHOOK_SECRET_KEY = "whsec_d7fb0641de441cfeb618c685229cc68074c88381b42a63449566ce364c919ed3"
+STRIPE_PUBLISHABLE_KEY = "public stripe key"
+STRIPE_TEST_SECRET_KEY = "stripe secret key"
+STRIPE_PRICE_ID="your price id"
+STRIPE_WEBHOOK_SECRET_KEY = "webhook secret key"
 
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER='theboys.ytube420@gmail.com'
-EMAIL_HOST_PASSWORD='vsfr kzrh yoxy ypid '
+EMAIL_HOST_USER='your email'
+EMAIL_HOST_PASSWORD='google_app password'
 EMAIL_USE_TLS=True
