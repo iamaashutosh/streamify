@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'backend',
     'django_filters',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -88,16 +89,15 @@ WSGI_APPLICATION = 'streamify.wsgi.application'
 
 DATABASES = {
 
-    "default":dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    #"default":dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
     
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'railway',
-    #     'USER': 'postgres',
-    #     'PASSWORD':'feUIVrWIDIsECUUYBvZzXNJylGQSitUr',
-    #     'HOST': 'postgres-novw.railway.internal',
-    #     'PORT': '5432'
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD':'postgresservice',
+        'PORT': '5432'
+    }
 }
 
 
@@ -163,6 +163,11 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'backend.authentication.CookiesJWTAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': (
+
+        'django_filters.rest_framework.DjangoFilterBackend',
+
+    ),
 }
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -190,11 +195,41 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
+FIREBASE_CONFIG = {
+
+  'apiKey': "AIzaSyDe9ZygUI1ppAzznD6NH5k4QzzG0ZvKo5s",
+
+  'authDomain': "streamify-4abce.firebaseapp.com",
+
+  'projectId': "streamify-4abce",
+
+  'storageBucket': "streamify-4abce.firebasestorage.app",
+
+  'messagingSenderId': "638188197601",
+
+  'appId': "1:638188197601:web:a76441fa12a6ea786789a0",
+
+  'measurementId': "G-VHQHGLK1JY",
+  "serviceAccount": BASE_DIR/'streamify-4abce-firebase-adminsdk-1zv3v-3b3b3b3b3b.json',
+
+}
+
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS=True
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
+    "http://localhost:5173/*",
     "http://*.on-acorn.io"
     "https://*.on-acorn.io"
     "https://railway.app/"
 ]
+
+STRIPE_PUBLISHABLE_KEY = "pk_test_51RBV91IodBvEuETZxVL4WDRzCEfswk2lgK2imrrWGvDheqyLPv7aWxIyVzcIwNe0fuDgWppLEdM7qKqHQ28VsbGu00WxBJYN5P"
+STRIPE_TEST_SECRET_KEY = "sk_test_51RBV91IodBvEuETZHcuZulpGtGexjiIzlXeejK9zy8arjHSSrFWwnFuwG6LWnuVu800DurzZwcfPtdEr0k397Cj200JwcQ7IYI"
+STRIPE_PRICE_ID="price_1RBXJOIodBvEuETZfI4umpeh"
+STRIPE_WEBHOOK_SECRET_KEY = "whsec_d7fb0641de441cfeb618c685229cc68074c88381b42a63449566ce364c919ed3"
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='theboys.ytube420@gmail.com'
+EMAIL_HOST_PASSWORD='vsfr kzrh yoxy ypid '
+EMAIL_USE_TLS=True

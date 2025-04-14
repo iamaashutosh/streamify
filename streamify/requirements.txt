@@ -12,3 +12,4 @@ django-filter
 pillow
 dj_database_url
 gunicorn
+firebase-admin
