@@ -1,0 +1,69 @@
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212; /* Dark background */
+    width:100%;
+  }
+  
+  .profileCard {
+    margin-top:60px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 350px;
+    color: white;
+  }
+  
+  .profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ff9800;
+    margin-bottom: 15px;
+  }
+  
+  .subscription {
+    background: #222;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 15px 0;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .extendBtn, .cancelBtn {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .extendBtn {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .cancelBtn {
+    background: #d32f2f;
+    color: white;
+  }
+  
+  .extendBtn:hover, .cancelBtn:hover {
+    opacity: 0.8;
+  }
+  .edit_btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+  }
+  

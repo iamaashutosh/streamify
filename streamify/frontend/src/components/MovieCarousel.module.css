@@ -1,0 +1,110 @@
+.carousel {
+    position: relative;
+    height: 500px; /* Reduce height to make it shorter */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .carousel_image_container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Ensure perfect centering */
+    width: 100%; /* Adjust width as needed */
+    height: 500px; /* Reduce height */
+  }
+  
+  .carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fits properly */
+  }
+  
+  .carousel_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+    
+  }
+  
+  /* Ensure content is visible */
+  .carousel_content {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    padding: 15px;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+    border-radius: 10px;
+    width: 80%;
+    justify-items:left;
+    font-weight: bold;
+  }
+  .carousel_content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans_serif;
+    font-weight: bold;
+  }
+  .icons{
+    display:flex;
+    gap:10px;
+  }
+  .movie_year{
+    display:flex;
+    align-items: center;
+    gap:5px;
+  }
+  .movie_rating{
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+  .watch_now_button{
+    background-color:white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width:160px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top:10px;
+    display:flex;
+    gap:15px;
+    align-items: center;
+  }
+
+  /* Control buttons positioning */
+  .carousel_controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .carousel_button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background_color 0.3s;
+  }
+  
+  .carousel_button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  

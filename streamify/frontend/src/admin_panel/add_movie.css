@@ -1,0 +1,61 @@
+
+.add-movie {
+    width:60%;
+    margin:auto;
+    margin-top:20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.add-movie h2 {
+    text-align: center;
+}
+
+.add-movie div {
+    margin-bottom: 15px;
+}
+
+.add-movie label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-movie input[type="text"],
+.add-movie input[type="number"],
+.add-movie textarea,
+.add-movie select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.add-movie button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-movie button:hover {
+    background-color: #218838;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    text-align: center;
+}
+.delete-btn{
+    background-color:red;
+    padding:10px;
+}

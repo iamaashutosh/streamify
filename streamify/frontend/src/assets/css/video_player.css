@@ -1,0 +1,52 @@
+/* Custom Video.js Netflix-style skin */
+.vjs-netflix {
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    background-color: #000;
+  }
+  
+ .vjs-netflix .vjs-control-bar {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    padding: 10px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+  }
+  
+  .video-js.vjs-netflix .vjs-play-control,
+  .video-js.vjs-netflix .vjs-volume-panel,
+  .video-js.vjs-netflix .vjs-current-time,
+  .video-js.vjs-netflix .vjs-time-divider,
+  .video-js.vjs-netflix .vjs-duration,
+  .video-js.vjs-netflix .vjs-fullscreen-control {
+    color: #fff;
+  }
+  
+  .video-js.vjs-netflix .vjs-slider {
+    background-color: #555;
+  }
+  
+  .video-js.vjs-netflix .vjs-play-progress {
+    background-color: #e50914; /* Netflix red */
+  }
+  
+  .video-js.vjs-netflix .vjs-load-progress {
+    background: #999;
+  }
+  
+  .video-js.vjs-netflix .vjs-progress-control {
+    margin: 0 10px;
+  }
+  
+  .video-js.vjs-netflix .vjs-big-play-button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    font-size: 3em;
+    border-radius: 50%;
+    color: #fff;
+    transition: background 0.3s;
+  }
+  
+  .video-js.vjs-netflix .vjs-big-play-button:hover {
+    background: rgba(229, 9, 20, 0.8);
+  }
+  

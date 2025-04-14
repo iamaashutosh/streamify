@@ -1,0 +1,55 @@
+.navbar {
+    background-color: transparent;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1000;
+    transition: backgorund-color 0.3s ease-in-out;
+  }
+  .scrolled {
+    background: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navbar__admin{
+    padding:10px;
+    background-color:red;
+    border-radius:5px;
+    cursor:pointer;
+  }
+  .navbar__brand {
+    color: red; /* red-600 */
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar__items {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .navbar__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .navbar__item:hover {
+    color: #d1d5db; /* gray-400 */
+    scale :1.05;
+    transition:0.3s;
+  }
+  
+  .navbar__profile {
+    color: white;
+    cursor: pointer;
+    font-size:100;
+  }
